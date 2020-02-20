@@ -45,6 +45,7 @@ public class Main {
         ArrayList<OutputFile.SendingLibraryInfo> libraryInfos = new ArrayList<>();
 
         ArrayList<InputFile.Library> libraries = inputFile.getLibraries();
+        sortBooks(libraries);
 
         int totalDaysForSignUp = 0;
         while (libraries.size() > 0) {
@@ -69,6 +70,22 @@ public class Main {
 
         System.out.println("We have done.");
         return libraryInfos;
+    }
+
+    private static void sortBooks(ArrayList<InputFile.Library> libraries) {
+        for (InputFile.Library library : libraries) {
+            library.getBooks().sort(new Comparator<InputFile.Book>() {
+                @Override
+                public int compare(InputFile.Book book1, InputFile.Book book2) {
+                    double score1 = book1.getScore();
+                    double score2 = book2.getScore();
+
+                    if (score1 > score2) return -1;
+                    else if (score2 > score1) return 1;
+                    else return 0;
+                }
+            });
+        }
     }
 
     private static void scoreAndSortLibraries(ArrayList<InputFile.Library> libraries) {

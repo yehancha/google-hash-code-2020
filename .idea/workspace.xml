@@ -5,12 +5,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/a_example_out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/a_example_out.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/b_read_on_out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/b_read_on_out.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/c_incunabula_out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/c_incunabula_out.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/d_tough_choices_out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/d_tough_choices_out.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/e_so_many_books_out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/e_so_many_books_out.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/f_libraries_of_the_world_out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoogleHashCode2020/com/yehancha/f_libraries_of_the_world_out.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yehancha/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yehancha/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yehancha/a_example_out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yehancha/a_example_out.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yehancha/c_incunabula_out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yehancha/c_incunabula_out.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yehancha/e_so_many_books_out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yehancha/e_so_many_books_out.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yehancha/f_libraries_of_the_world_out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yehancha/f_libraries_of_the_world_out.txt" afterDir="false" />
@@ -79,22 +81,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="325" y="0" width="706" height="723" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1582224832478" />
-    <state width="1324" height="165" key="GridCell.Tab.0.bottom" timestamp="1582230281281">
+    <state width="1324" height="165" key="GridCell.Tab.0.bottom" timestamp="1582231281858">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="165" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582230281281" />
-    <state width="1324" height="165" key="GridCell.Tab.0.center" timestamp="1582230281281">
+    <state width="1324" height="165" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582231281858" />
+    <state width="1324" height="165" key="GridCell.Tab.0.center" timestamp="1582231281858">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="165" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582230281281" />
-    <state width="1324" height="165" key="GridCell.Tab.0.left" timestamp="1582230281280">
+    <state width="1324" height="165" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582231281858" />
+    <state width="1324" height="165" key="GridCell.Tab.0.left" timestamp="1582231281857">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="165" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582230281280" />
-    <state width="1324" height="165" key="GridCell.Tab.0.right" timestamp="1582230281281">
+    <state width="1324" height="165" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582231281857" />
+    <state width="1324" height="165" key="GridCell.Tab.0.right" timestamp="1582231281858">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="165" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582230281281" />
+    <state width="1324" height="165" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582231281858" />
     <state width="1324" height="216" key="GridCell.Tab.1.bottom" timestamp="1582226606550">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -121,7 +123,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/yehancha/Main.java</url>
-          <line>69</line>
+          <line>71</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
