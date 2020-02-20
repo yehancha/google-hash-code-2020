@@ -7,7 +7,15 @@ public class Main {
     private static String filePath = "/home/yehancha/IdeaProjects/GoogleHashCode2020/src/com/yehancha/";
 
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
         process("a_example");
+        process("b_read_on");
+        process("c_incunabula");
+        process("d_tough_choices");
+        process("e_so_many_books");
+        process("f_libraries_of_the_world");
+        long end = System.currentTimeMillis();
+        System.out.println("Processing time: " + (end - start) / 1000 + "s");
     }
 
     private static void process(String dataset) {
@@ -24,6 +32,7 @@ public class Main {
 
         ArrayList<InputFile.Library> libraries = inputFile.getLibraries();
 
+        int totalDaysForSignUp = 0;
         while (libraries.size() > 0) {
             scoreAndSortLibraries(libraries);
             InputFile.Library library = removeTopLibrary(libraries);
@@ -33,8 +42,18 @@ public class Main {
             info.setBooks(library.getBooks());
 
             libraryInfos.add(info);
+
+            totalDaysForSignUp += library.getSignUpDays();
+
+            System.out.println("Choose library: " + library.getId() + " with " + library.getBooks().size() + " books.");
+
+            if (totalDaysForSignUp > inputFile.getScanningDayCount()) {
+                System.out.println("We are out of days.");
+                break;
+            }
         }
 
+        System.out.println("We have done.");
         return libraryInfos;
     }
 
@@ -55,18 +74,20 @@ public class Main {
         libraries.sort(new Comparator<InputFile.Library>() {
             @Override
             public int compare(InputFile.Library library1, InputFile.Library library2) {
-                return library1.getScore() > library2.getScore() ? -1 : 1;
+                double score1 = library1.getScore();
+                double score2 = library2.getScore();
+
+                if (score1 > score2) return -1;
+                else if (score2 > score1) return 1;
+                else return 0;
             }
         });
-
-        for (InputFile.Library library : libraries) {
-            System.out.println(library.getId() + ": " + library.getScore());
-        }
     }
 
     private static InputFile.Library removeTopLibrary(ArrayList<InputFile.Library> libraries) {
         InputFile.Library top = libraries.remove(0);
         ArrayList<InputFile.Book> topLibraryBooks =  top.getBooks();
+        ArrayList<InputFile.Library> zeroBookLibraries = new ArrayList<>();
 
         // Remove duplicate books
         for (InputFile.Library library : libraries) {
@@ -74,6 +95,12 @@ public class Main {
             for (InputFile.Book topLibraryBook : topLibraryBooks) {
                 books.remove(topLibraryBook);
             }
+
+            if (books.size() == 0) zeroBookLibraries.add(library);
+        }
+
+        for (InputFile.Library library : zeroBookLibraries) {
+            libraries.remove(library);
         }
 
         return top;
