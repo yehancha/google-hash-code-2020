@@ -8,23 +8,37 @@ public class Main {
 
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
-        process("a_example");
-        process("b_read_on");
-        process("c_incunabula");
-        process("d_tough_choices");
-        process("e_so_many_books");
-        process("f_libraries_of_the_world");
+        int score = 0;
+        score += process("a_example");
+        score += process("b_read_on");
+        score += process("c_incunabula");
+        score += process("d_tough_choices");
+        score += process("e_so_many_books");
+        score += process("f_libraries_of_the_world");
         long end = System.currentTimeMillis();
         System.out.println("Processing time: " + (end - start) / 1000 + "s");
+        System.out.println("Final score: " + score);
     }
 
-    private static void process(String dataset) {
+    private static int process(String dataset) {
         InputFile inputFile = FileHandler.readInputFile(filePath + dataset + ".txt");
         OutputFile outputFile = new OutputFile();
 
         outputFile.getLibraries().addAll(getLibraryInfos(inputFile));
 
+//        int score = 0;
+//        for (OutputFile.SendingLibraryInfo info : outputFile.getLibraries()) {
+//            for (InputFile.Book book : info.getBooks()) {
+//                score += book.getScore();
+//            }
+//        }
+//
+//        System.out.println("Final score: " + score);
+
         FileHandler.writeOutputFile(outputFile, filePath + dataset + "_out.txt");
+
+//        return score;
+        return 0;
     }
 
     private static ArrayList<OutputFile.SendingLibraryInfo> getLibraryInfos(InputFile inputFile) {
@@ -66,7 +80,7 @@ public class Main {
                 totalBookScore += book.getScore();
             }
 
-            double totalDays = library.getSignUpDays() + (double) libraryBooks.size() / library.getBooksPerDay();
+            double totalDays = library.getSignUpDays(); // + (double) libraryBooks.size() / library.getBooksPerDay();
 
             library.setScore(totalBookScore / totalDays);
         }
