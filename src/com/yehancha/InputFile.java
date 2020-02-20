@@ -57,6 +57,7 @@ public class InputFile {
         private int signUpDays;
         private int booksPerDay;
         private ArrayList<Book> books = new ArrayList<>();
+        private double score;
 
         public int getId() {
             return id;
@@ -88,6 +89,14 @@ public class InputFile {
 
         public void setBooks(ArrayList<Book> books) {
             this.books = books;
+        }
+
+        public double getScore() {
+            return score;
+        }
+
+        public void setScore(double score) {
+            this.score = score;
         }
     }
 }
