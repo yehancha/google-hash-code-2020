@@ -26,19 +26,19 @@ public class Main {
 
         outputFile.getLibraries().addAll(getLibraryInfos(inputFile));
 
-//        int score = 0;
-//        for (OutputFile.SendingLibraryInfo info : outputFile.getLibraries()) {
-//            for (InputFile.Book book : info.getBooks()) {
-//                score += book.getScore();
-//            }
-//        }
-//
-//        System.out.println("Final score: " + score);
+        int score = 0;
+        for (OutputFile.SendingLibraryInfo info : outputFile.getLibraries()) {
+            for (InputFile.Book book : info.getBooks()) {
+                score += book.getScore();
+            }
+        }
+
+        System.out.println("Final score: " + score);
 
         FileHandler.writeOutputFile(outputFile, filePath + dataset + "_out.txt");
 
-//        return score;
-        return 0;
+        return score;
+//        return 0;
     }
 
     private static ArrayList<OutputFile.SendingLibraryInfo> getLibraryInfos(InputFile inputFile) {
@@ -49,7 +49,7 @@ public class Main {
 
         int totalDaysForSignUp = 0;
         while (libraries.size() > 0) {
-            scoreAndSortLibraries(libraries);
+            scoreAndSortLibraries(libraries, inputFile.getScanningDayCount() - totalDaysForSignUp);
             InputFile.Library library = removeTopLibrary(libraries);
 
             OutputFile.SendingLibraryInfo info = new OutputFile.SendingLibraryInfo();
@@ -88,12 +88,21 @@ public class Main {
         }
     }
 
-    private static void scoreAndSortLibraries(ArrayList<InputFile.Library> libraries) {
+    private static void scoreAndSortLibraries(ArrayList<InputFile.Library> libraries, int remainingDays) {
         for (InputFile.Library library : libraries) {
             ArrayList<InputFile.Book> libraryBooks = library.getBooks();
 
             int totalBookScore = 0;
+            int booksPerDay = library.getBooksPerDay();
+            int daysForSignUp = library.getSignUpDays();
+            double dayCount = daysForSignUp;
+            int bookCount = 0;
             for (InputFile.Book book : libraryBooks) {
+                bookCount++;
+                dayCount = daysForSignUp + (double) bookCount / booksPerDay;
+
+                if (dayCount > remainingDays) break;
+
                 totalBookScore += book.getScore();
             }
 
